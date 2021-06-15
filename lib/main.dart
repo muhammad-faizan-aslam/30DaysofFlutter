@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_8hour/home_page.dart';
+import 'package:flutter_8hour/pages/home_page.dart';
+import 'package:flutter_8hour/pages/login_page.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(MyApp());
@@ -21,7 +23,24 @@ class MyApp extends StatelessWidget {
 
 
     return MaterialApp(
-      home: HomePage()
+      // home: HomePage(),
+      themeMode: ThemeMode.light,
+      // themeMode: ThemeMode.dark,
+      theme: ThemeData(
+        primarySwatch: Colors.brown,
+        // fontFamily: GoogleFonts.lato().fontFamily
+        fontFamily: GoogleFonts.quando().fontFamily
+      ),
+      darkTheme: ThemeData(
+        // brightness: Brightness.dark,
+        primarySwatch: Colors.red
+      ),
+      // initialRoute: "/home",
+      routes: {
+        "/":(context)=> LoginPage(),
+        "/home":(context)=> HomePage(),
+        "/login": (context)=> LoginPage()
+      },
     );
   }
 }
