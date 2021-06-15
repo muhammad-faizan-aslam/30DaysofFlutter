@@ -9,7 +9,9 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(),
+        appBar: AppBar(
+          title: Text("Catalog app"),
+        ),
         body: Center(
           child: Container(
           child: Text("Welcome to $days Days of flutter by $name"),),
